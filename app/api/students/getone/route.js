@@ -14,7 +14,7 @@ export async function GET(req,res) {
         const getOne= await prisma.users.findUnique({
             where: {id:id}
         })
-        return NextResponse.json({status:"success",total:getOne.length,data:getAll},{status:200})
+        return NextResponse.json({status:"success",total:getOne.length,data:getOne},{status:200})
     }
     catch(err){
         return NextResponse.json({status:"failed",data:err},{status:500})
